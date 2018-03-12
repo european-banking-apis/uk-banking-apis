@@ -6,7 +6,7 @@
 {% assign path_count = 0 %}
 {% assign apijson = site.data.apis %}
 {% assign contents = site.data.api-commons %}
-apijson: {{ apijson }}<br />
+
 {% for api in apijson.include %}
 
   {% assign path = api.url  | replace: site.raw_url,'' %}
