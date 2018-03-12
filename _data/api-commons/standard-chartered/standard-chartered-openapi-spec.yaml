@@ -1,0 +1,490 @@
+agger: "2.0"
+info:
+  title: Standard Chartered
+  description: Standard Chartered PLC is a British multinational banking and financial
+    services company headquartered in London, England. It operates a network of more
+    than 1,200 branches and outlets (including subsidiaries, associates and joint
+    ventures) across more than 70 countries and employs around 87,000 people. It is
+    a universal bank with operations in consumer, corporate and institutional banking,
+    and treasury services. Despite its UK base, it does not conduct retail banking
+    in the UK, and around 90% of its profits come from Asia, Africa and the Middle
+    East.
+  termsOfService: https://www.sc.com/terms-and-conditions
+  contact:
+    name: Steve Spicer
+    url: https://www.sc.com
+    email: steven.spicer@sc.com
+  version: 1.0.0
+host: developer.sc.com
+basePath: /
+schemes:
+- http
+produces:
+- application/json
+consumes:
+- application/json
+paths:
+  /cib/service/s2b/api/v1/banks/scb/accounts/{accountId}/{viewId}/account:
+    get:
+      summary: Accounts
+      description: "The \u201CGetAccountBalance\u201D API upon successful user authentication
+        and entitlement checks will return the various types of \u201CAccount Balances\u201D
+        applicable for the specified Account Number"
+      operationId: getCibServiceS2bApiV1BanksScbAccountsAccountViewAccount
+      parameters:
+      - in: path
+        name: accountId
+      - in: header
+        name: GroupId
+      - in: header
+        name: UserId
+      - in: path
+        name: viewId
+      responses:
+        200:
+          description: OK
+      tags:
+      - Cib
+      - ' Service'
+      - ' S2b'
+      - ' Api'
+      - ' V1'
+      - ' Banks'
+      - ' Scb'
+      - ' Accounts'
+      - ' Account'
+      - ' View'
+      - ' Account'
+  /cib/service/s2b/api/v1/banks/scb/accounts/{accountId}/{viewId}/transaction-request-types:
+    get:
+      summary: Finds all support transaction types for a given account
+      description: "The \u201CGetTransactionTypes\u201D API upon successful user authentication
+        and entitlement checks will return the supported transaction types for the
+        specified account"
+      operationId: getCibServiceS2bApiV1BanksScbAccountsAccountViewTransactionRequestTypes
+      parameters:
+      - in: path
+        name: accountId
+      - in: header
+        name: GroupId
+      - in: header
+        name: UserId
+      - in: path
+        name: viewId
+      responses:
+        200:
+          description: OK
+      tags:
+      - Cib
+      - ' Service'
+      - ' S2b'
+      - ' Api'
+      - ' V1'
+      - ' Banks'
+      - ' Scb'
+      - ' Accounts'
+      - ' Account'
+      - ' View'
+      - ' Transaction'
+      - ' Request'
+      - ' Types'
+  /cib/service/s2b/api/v1/banks/scb/accounts/{viewId}/accounts:
+    get:
+      summary: Account Details & Balances
+      description: List available bank accounts
+      operationId: getCibServiceS2bApiV1BanksScbAccountsViewAccounts
+      parameters:
+      - in: header
+        name: GroupId
+      - in: header
+        name: UserId
+      - in: path
+        name: viewId
+      responses:
+        200:
+          description: OK
+      tags:
+      - Cib
+      - ' Service'
+      - ' S2b'
+      - ' Api'
+      - ' V1'
+      - ' Banks'
+      - ' Scb'
+      - ' Accounts'
+      - ' View'
+      - ' Accounts'
+  /cib/service/s2b/api/v1/banks/scb/reference/default/branches:
+    post:
+      summary: Bank Code Inquiry
+      description: "The \u201CGetBankCode\u201D API returns list of Bank Codes for
+        the specified combination of \u201CCountry\u201D, \u201CCity\u201D and \u201CBank\u201D
+        combination"
+      operationId: postCibServiceS2bApiV1BanksScbReferenceDefaultBranches
+      responses:
+        200:
+          description: OK
+      tags:
+      - Cib
+      - ' Service'
+      - ' S2b'
+      - ' Api'
+      - ' V1'
+      - ' Banks'
+      - ' Scb'
+      - ' Reference'
+      - ' Default'
+      - ' Branches'
+  /cib/service/s2b/api/v1/banks/scb/reference/default/holiday-calendar/country/{country}:
+    get:
+      summary: Holiday Calendar Inquiry (Country)
+      description: "The \u201CGetHolidayCalendar\u201D API returns list of holidays
+        applicable for the specified combination of:\n<ul><li>Country</li><li>Date
+        Range</li></lu>"
+      operationId: getCibServiceS2bApiV1BanksScbReferenceDefaultHolayCalendarCountryCountry
+      parameters:
+      - in: path
+        name: country
+      - in: query
+        name: endDate
+      - in: query
+        name: startDate
+      responses:
+        200:
+          description: OK
+      tags:
+      - Cib
+      - ' Service'
+      - ' S2b'
+      - ' Api'
+      - ' V1'
+      - ' Banks'
+      - ' Scb'
+      - ' Reference'
+      - ' Default'
+      - ' Holay'
+      - ' Calendar'
+      - ' Country'
+      - ' Country'
+  /cib/service/s2b/api/v1/banks/scb/reference/default/holiday-calendar/currency/{currency}:
+    get:
+      summary: Holiday Calendar Inquiry (Currency)
+      description: "The \u201CGetHolidayCalendar\u201D API returns list of holidays
+        applicable for the specified combination of:\n<ul><li>Currency</li><li>Date
+        Range</li></lu>"
+      operationId: getCibServiceS2bApiV1BanksScbReferenceDefaultHolayCalendarCurrencyCurrency
+      parameters:
+      - in: path
+        name: currency
+      - in: query
+        name: endDate
+      - in: query
+        name: startDate
+      responses:
+        200:
+          description: OK
+      tags:
+      - Cib
+      - ' Service'
+      - ' S2b'
+      - ' Api'
+      - ' V1'
+      - ' Banks'
+      - ' Scb'
+      - ' Reference'
+      - ' Default'
+      - ' Holay'
+      - ' Calendar'
+      - ' Currency'
+      - ' Currency'
+  /cib/service/s2b/api/v1/trade/{countryCode}/{customerId}/limits:
+    get:
+      summary: Retrieve trade finance limit details
+      description: Retrieve trade finance limit details
+      operationId: getCibServiceS2bApiV1TradeCountrycodeCustomerLimits
+      parameters:
+      - in: path
+        name: countryCode
+        description: ISO Country Code
+      - in: path
+        name: customerId
+        description: Customer Reference Id
+      responses:
+        200:
+          description: OK
+      tags:
+      - Cib
+      - ' Service'
+      - ' S2b'
+      - ' Api'
+      - ' V1'
+      - ' Trade'
+      - ' Countrycode'
+      - ' Customer'
+      - ' Limits'
+  /cib/service/s2b/api/v1/trade/{countryCode}/{customerId}/profile:
+    get:
+      summary: Retrieve trade finance customer profile
+      description: Retrieve trade finance customer profile
+      operationId: getCibServiceS2bApiV1TradeCountrycodeCustomerProfile
+      parameters:
+      - in: path
+        name: countryCode
+        description: ISO Country Code
+      - in: path
+        name: customerId
+        description: Customer Reference Id
+      responses:
+        200:
+          description: OK
+      tags:
+      - Cib
+      - ' Service'
+      - ' S2b'
+      - ' Api'
+      - ' V1'
+      - ' Trade'
+      - ' Countrycode'
+      - ' Customer'
+      - ' Profile'
+  /cib/service/s2b/api/v1/trade/{countryCode}/{customerId}/transaction/{transactionId}:
+    get:
+      summary: Retrieve trade finance transaction status for specific transaction
+        reference Id
+      description: |
+        Retrieve trade finance transaction status for specific transaction reference Id
+      operationId: getCibServiceS2bApiV1TradeCountrycodeCustomerTransactionTransaction
+      parameters:
+      - in: path
+        name: countryCode
+        description: Country Code
+      - in: path
+        name: customerId
+        description: Customer Reference Id
+      - in: path
+        name: transactionId
+        description: Transaction Reference Id
+      responses:
+        200:
+          description: OK
+      tags:
+      - Cib
+      - ' Service'
+      - ' S2b'
+      - ' Api'
+      - ' V1'
+      - ' Trade'
+      - ' Countrycode'
+      - ' Customer'
+      - ' Transaction'
+      - ' Transaction'
+  /cib/service/s2b/api/v1/trade/{countryCode}/{customerId}/transactions:
+    get:
+      summary: Retrieve all trade finance transaction status for the current date
+        (localised to tz)
+      description: |
+        Retrieve all trade finance transaction status for the current date (localised to tz)
+      operationId: getCibServiceS2bApiV1TradeCountrycodeCustomerTransactions
+      parameters:
+      - in: path
+        name: countryCode
+        description: ISO Country Code
+      - in: path
+        name: customerId
+        description: Customer Reference Id
+      - in: query
+        name: tz
+        description: Timezone code (ISO-8601), e
+      responses:
+        200:
+          description: OK
+      tags:
+      - Cib
+      - ' Service'
+      - ' S2b'
+      - ' Api'
+      - ' V1'
+      - ' Trade'
+      - ' Countrycode'
+      - ' Customer'
+      - ' Transactions'
+definitions:
+  OpenApiAccount:
+    properties:
+      id:
+        description: This is a default description.
+        type: get
+      label:
+        description: This is a default description.
+        type: get
+      number:
+        description: This is a default description.
+        type: get
+      owners:
+        description: This is a default description.
+        type: get
+      type:
+        description: This is a default description.
+        type: get
+      swift_bic:
+        description: This is a default description.
+        type: get
+      bank_id:
+        description: This is a default description.
+        type: get
+      iban:
+        description: This is a default description.
+        type: get
+  OpenApiAccountBalance:
+    properties:
+      currency:
+        description: This is a default description.
+        type: get
+      lastUpdated:
+        description: This is a default description.
+        type: get
+      amount:
+        description: This is a default description.
+        type: get
+  OpenApiAccountOwner:
+    properties:
+      id:
+        description: This is a default description.
+        type: get
+      provider:
+        description: This is a default description.
+        type: get
+      display_name:
+        description: This is a default description.
+        type: get
+  OpenApiAddress:
+    properties:
+      line_1:
+        description: This is a default description.
+        type: get
+      line_2:
+        description: This is a default description.
+        type: get
+      line_3:
+        description: This is a default description.
+        type: get
+      city:
+        description: This is a default description.
+        type: get
+      state:
+        description: This is a default description.
+        type: get
+      postcode:
+        description: This is a default description.
+        type: get
+      country:
+        description: This is a default description.
+        type: get
+  OpenApiBankBranch:
+    properties:
+      id:
+        description: This is a default description.
+        type: get
+      name:
+        description: This is a default description.
+        type: get
+      swiftCode:
+        description: This is a default description.
+        type: get
+      country:
+        description: This is a default description.
+        type: get
+      routingCode:
+        description: This is a default description.
+        type: get
+  OpenApiHoliday:
+    properties:
+      description:
+        description: This is a default description.
+        type: get
+      value:
+        description: This is a default description.
+        type: get
+      currency:
+        description: This is a default description.
+        type: get
+      country:
+        description: This is a default description.
+        type: get
+  OpenApiHolidays:
+    properties:
+      holidays:
+        description: This is a default description.
+        type: get
+  OpenApiLicense:
+    properties:
+      id:
+        description: This is a default description.
+        type: get
+      name:
+        description: This is a default description.
+        type: get
+  OpenApiMeta:
+    properties: []
+  customer:
+    properties:
+      customerId:
+        description: This is a default description.
+        type: get
+      customerName:
+        description: This is a default description.
+        type: get
+      customerBookingLocation:
+        description: This is a default description.
+        type: get
+      customerDomicileCountry:
+        description: This is a default description.
+        type: get
+      limits:
+        description: This is a default description.
+        type: get
+      transactions:
+        description: This is a default description.
+        type: get
+  transactionList:
+    properties:
+      customerId:
+        description: This is a default description.
+        type: get
+      customerName:
+        description: This is a default description.
+        type: get
+      updateAsofTime:
+        description: This is a default description.
+        type: get
+      transactionsInProgress:
+        description: This is a default description.
+        type: get
+      releasedTransactions:
+        description: This is a default description.
+        type: get
+  transaction:
+    properties:
+      transactionsCustomerId:
+        description: This is a default description.
+        type: get
+      transactionCustomerName:
+        description: This is a default description.
+        type: get
+      updateAsofTime:
+        description: This is a default description.
+        type: get
+      transactionsInProgress:
+        description: This is a default description.
+        type: get
+      releasedTransactions:
+        description: This is a default description.
+        type: get
+  limits:
+    properties:
+      customerLimitDetails:
+        description: This is a default description.
+        type: get
+      coBorrowerLimitDetails:
+        description: This is a default description.
+        type: get
