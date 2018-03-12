@@ -1,0 +1,70 @@
+---
+layout: default
+title: API Evangelist - UK Banking APIs
+---
+
+<!-- Main -->
+{% assign home_content = site.data.home_content.index[0] %}
+<section id="banner">
+	<div class="content">
+		<header>
+			<h2>{{ home_content.title }}</h2>
+		</header>
+		<p align="right"><img src="https://s3.amazonaws.com/kinlane-productions/kin-lane/kin-lane-cartoon-questioning.png" alt="Kin Lane" width="22%" align="right" /></p>
+		<p>{{ home_content.content }}</p>
+	</div>
+</section>
+
+<!-- Partners -->
+<a name="Partners"></a>
+<section>
+	<header>
+		<h2>API Evangelist Partners</h2>
+		<p>These are my partners who invest in API Evangelist each month, helping underwrite my research, and making sure I'm able to keep monitoring the API space as I do.</p>
+	</header>
+	<div class="features">
+		{% assign partners = site.data.partners.index | sort: 'view_sort' %}
+    {% for partner in partners %}
+      {% if partner.type == 'Sponsor' %}
+			<article>
+				<p><a href="{{ partner.url }}" target="_blank"><img src="{{ partner.image }}" width="75%" style="padding: 15px;" align="center" /></a></p>
+				<div class="content">
+					<h3><a href="{{ partner.url }}" target="_blank">{{ partner.name }}</a></h3>
+					<p>{{ partner.description }}</p>
+				</div>
+			</article>
+      {% endif %}
+    {% endfor %}
+	</div>
+</section>
+
+<!-- Organizations -->
+<a name="Organizations"></a>
+{% assign organization_content = site.data.organization_content.index[0] %}
+<section>
+	<header>
+		<h2>{{ organization_content.title }}</h2>
+	</header>
+	<p>{{ organization_content.header }}</p>
+	<div class="features">
+
+		{% include organizations.html %}
+
+	</div>
+	<p>{{ organization_content.footer }}</p>
+</section>
+
+<!-- About This Research -->
+{% assign about_content = site.data.home_content.index[1] %}
+<a name="About"></a>
+<section id="banner">
+	<div class="content">
+		<header>
+			<h2>{{ about_content.title }}</h2>
+		</header>
+		{{ about_content.content }}
+	</div>
+	<span class="image object">
+		<img src="{{ about_content.image }}" alt="" width="25%" />
+	</span>
+</section>

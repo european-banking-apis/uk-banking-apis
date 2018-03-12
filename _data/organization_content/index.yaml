@@ -1,0 +1,10 @@
+---
+- title: UK Banking APIs
+  image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-organization.jpg
+  header: These are the UK banking APIs I've aggregated so far. As I get more added to this list I will start breaking them down into more specific categories, and targeting them for other related projects.
+  footer: If you think there is an API I should have listed here feel free to tweet
+    it at me, or submit as a Github issue. Even though I do this full time, I'm still
+    a one person show, and I miss quite a bit, and depend on my network to help me
+    know what is going on.
+  tags: Client
+...

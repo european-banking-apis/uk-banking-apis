@@ -1,0 +1,31 @@
+title:        UK Banking APIs
+url:          http://uk.banking.apis.apievangelist.com
+raw_url: https://raw.githubusercontent.com/european-banking-apis/uk-banking-apis/master/_data/api-commons/
+
+tag: 311
+
+logo:         https://s3.amazonaws.com/kinlane-productions/api-evangelist/api-evangelist-logo-311.png
+logo_width:   80
+logo_bottom_padding: 10
+
+version:      1.1.1
+author:
+  name:       'Kin Lane'
+  email:      'info@apievangelist.com'
+markdown:     kramdown
+
+permalink: /:categories/:year/:month/:day/:title/
+exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md", ".DS_Store"]
+
+paginate: 25
+paginate_path: "/blog/page:num"
+
+github_user: european-banking-apis
+github_repo: uk-banking-apis
+github_branch: master
+
+# Footer
+footer_title: API Evangelist
+footer_link: http://apievangelist.com
+footer_image_source: https://s3.amazonaws.com/kinlane-productions/footer/empowered-by-you-banner.png
+footer_image_width: 60
