@@ -11,7 +11,7 @@
 
   {% assign path = api.url  | replace: site.raw_url,'' %}
   {% assign path = path  | replace: '/apis.yaml','' %}
-
+path: {{ path}}<br />
   {% for api in contents %}
 
     {% assign api_name = api[0] %}
