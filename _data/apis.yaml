@@ -1,34 +1,50 @@
-name: "311"
-created: "2017-12-31"
-modified: "2017-12-31"
-url: http://311.apievangelist.com/apis.yaml
+name: UK Banking APIs
+created: "2018-03-12"
+modified: "2018-03-12"
+url: http://uk.banking.apis.apievangelist.com/apis.yaml
 specificationVersion: "0.14"
 apis: []
 tags:
-- "311"
-- "311"
+- UK Banks
+- UK Banks
 include:
-- name: Baltimore Open311
-  url: https://raw.githubusercontent.com/api-stack/311/master/_data/api-commons/baltimore-open311/apis.yaml
-- name: Bloomington Indiana 311
-  url: https://raw.githubusercontent.com/api-stack/311/master/_data/api-commons/bloomington-indiana-311/apis.yaml
-- name: Boston Massachusetts 311
-  url: https://raw.githubusercontent.com/api-stack/311/master/_data/api-commons/boston-massachusetts-311/apis.yaml
-- name: Brookline Massachusetts 311
-  url: https://raw.githubusercontent.com/api-stack/311/master/_data/api-commons/brookline-massachusetts-311/apis.yaml
-- name: Chicago Illinois 311
-  url: https://raw.githubusercontent.com/api-stack/311/master/_data/api-commons/chicago-illinois-311/apis.yaml
-- name: Columbus Indiana 311
-  url: https://raw.githubusercontent.com/api-stack/311/master/_data/api-commons/columbus-indiana-311/apis.yaml
-- name: Grand Rapids Michigan 311
-  url: https://raw.githubusercontent.com/api-stack/311/master/_data/api-commons/grand-rapids-michigan-311/apis.yaml
-- name: Open311
-  url: https://raw.githubusercontent.com/api-stack/311/master/_data/api-commons/open311/apis.yaml
-- name: Philadelphia Pennsylvania 311
-  url: https://raw.githubusercontent.com/api-stack/311/master/_data/api-commons/philadelphia-pennsylvania-311/apis.yaml
-- name: San Francisco California 311
-  url: https://raw.githubusercontent.com/api-stack/311/master/_data/api-commons/san-francisco-california-311/apis.yaml
-- name: Toronto Ontario 311
-  url: https://raw.githubusercontent.com/api-stack/311/master/_data/api-commons/toronto-ontario-311/apis.yaml
-- name: Washington DC 311
-  url: https://raw.githubusercontent.com/api-stack/311/master/_data/api-commons/washington-dc-311/apis.yaml
+- name: ABN AMRO
+  url: https://raw.githubusercontent.com/european-banking-apis/uk-banking-apis/master/_data/api-commons/abn-amro/apis.yaml
+- name: Allied Irish Bank
+  url: https://raw.githubusercontent.com/european-banking-apis/uk-banking-apis/master/_data/api-commons/allied-irish-bank/apis.yaml
+- name: Bank of Ireland
+  url: https://raw.githubusercontent.com/european-banking-apis/uk-banking-apis/master/_data/api-commons/bank-of-ireland/apis.yaml
+- name: Bank of Scotland
+  url: https://raw.githubusercontent.com/european-banking-apis/uk-banking-apis/master/_data/api-commons/bank-of-scotland/apis.yaml
+- name: Barclays
+  url: https://raw.githubusercontent.com/european-banking-apis/uk-banking-apis/master/_data/api-commons/barclays/apis.yaml
+- name: BBVA Compass
+  url: https://raw.githubusercontent.com/european-banking-apis/uk-banking-apis/master/_data/api-commons/bbva-compass/apis.yaml
+- name: Coutts
+  url: https://raw.githubusercontent.com/european-banking-apis/uk-banking-apis/master/_data/api-commons/coutts/apis.yaml
+- name: Danske Bank
+  url: https://raw.githubusercontent.com/european-banking-apis/uk-banking-apis/master/_data/api-commons/danske-bank/apis.yaml
+- name: Esme
+  url: https://raw.githubusercontent.com/european-banking-apis/uk-banking-apis/master/_data/api-commons/esme/apis.yaml
+- name: First Trust Bank
+  url: https://raw.githubusercontent.com/european-banking-apis/uk-banking-apis/master/_data/api-commons/first-trust-bank/apis.yaml
+- name: Halifax Bank
+  url: https://raw.githubusercontent.com/european-banking-apis/uk-banking-apis/master/_data/api-commons/halifax-bank/apis.yaml
+- name: HSBC
+  url: https://raw.githubusercontent.com/european-banking-apis/uk-banking-apis/master/_data/api-commons/hsbc/apis.yaml
+- name: Lloyds Bank
+  url: https://raw.githubusercontent.com/european-banking-apis/uk-banking-apis/master/_data/api-commons/lloyds-bank/apis.yaml
+- name: Nationwide Building Society
+  url: https://raw.githubusercontent.com/european-banking-apis/uk-banking-apis/master/_data/api-commons/nationwide-building-society/apis.yaml
+- name: NatWest
+  url: https://raw.githubusercontent.com/european-banking-apis/uk-banking-apis/master/_data/api-commons/natwest/apis.yaml
+- name: Nordea
+  url: https://raw.githubusercontent.com/european-banking-apis/uk-banking-apis/master/_data/api-commons/nordea/apis.yaml
+- name: Royal Bank of Scotland
+  url: https://raw.githubusercontent.com/european-banking-apis/uk-banking-apis/master/_data/api-commons/royal-bank-of-scotland/apis.yaml
+- name: Santander Bank
+  url: https://raw.githubusercontent.com/european-banking-apis/uk-banking-apis/master/_data/api-commons/santander-bank/apis.yaml
+- name: Standard Chartered
+  url: https://raw.githubusercontent.com/european-banking-apis/uk-banking-apis/master/_data/api-commons/standard-chartered/apis.yaml
+- name: Ulster Bank
+  url: https://raw.githubusercontent.com/european-banking-apis/uk-banking-apis/master/_data/api-commons/ulster-bank/apis.yaml
