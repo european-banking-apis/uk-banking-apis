@@ -18,6 +18,28 @@ modified: "2018-03-12"
 url: https://raw.githubusercontent.com/european-banking-apis/uk-banking-apis/master/_data/api-commons/allied-irish-bank/apis.yaml
 specificationVersion: "0.14"
 apis:
+- name: Allied Irish Bank Account APIs
+  description: Allied Irish Banks (AIB) is one of the so-called Big Four commercial
+    banks in Ireland
+  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/allied-irish-bank.jpeg
+  humanURL: https://aibgb.co.uk/
+  baseURL: https://aibgb.co.uk/
+  tags:
+  - UK Banks
+  properties:
+  - type: x-openapi-spec
+    url: https://raw.githubusercontent.com/european-banking-apis/uk-banking-apis/master/_data/api-commons/allied-irish-bank/allied-irish-bank-account-apis-openapi-spec.yaml
+- name: Allied Irish Bank Payment APIs
+  description: Allied Irish Banks (AIB) is one of the so-called Big Four commercial
+    banks in Ireland
+  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/allied-irish-bank.jpeg
+  humanURL: https://aibgb.co.uk/
+  baseURL: https://aibgb.co.uk/
+  tags:
+  - UK Banks
+  properties:
+  - type: x-openapi-spec
+    url: https://raw.githubusercontent.com/european-banking-apis/uk-banking-apis/master/_data/api-commons/allied-irish-bank/allied-irish-bank-payment-apis-openapi-spec.yaml
 - name: Allied Irish Bank Public APIs
   description: Allied Irish Banks (AIB) is one of the so-called Big Four commercial
     banks in Ireland
