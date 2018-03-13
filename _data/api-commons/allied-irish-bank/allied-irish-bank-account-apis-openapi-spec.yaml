@@ -1,0 +1,549 @@
+agger: "2.0"
+info:
+  title: Account and Transaction API Specification
+  description: Swagger for Account and Transaction API Specification
+  termsOfService: https://www.openbanking.org.uk/terms
+  contact:
+    name: Service Desk
+    email: ServiceDesk@openbanking.org.uk
+  version: 1.0.0
+basePath: /open-banking/v1.1
+schemes:
+- http
+produces:
+- application/json
+consumes:
+- application/json
+paths:
+  /account-requests:
+    post:
+      summary: Create an account request
+      description: Create an account request
+      operationId: CreateAccountRequest
+      parameters:
+      - in: header
+        name: Authorization
+        description: An Authorisation Token as per https://tools
+      - in: body
+        name: body
+        description: Create an Account Request
+        schema:
+          $ref: '#/definitions/holder'
+      - in: header
+        name: x-fapi-customer-ip-address
+        description: The PSU's IP address if the PSU is currently logged in with the
+          TPP
+      - in: header
+        name: x-fapi-customer-last-logged-time
+        description: The time when the PSU last logged in with the TPP
+      - in: header
+        name: x-fapi-financial-id
+        description: The unique id of the ASPSP to which the request is issued
+      - in: header
+        name: x-fapi-interaction-id
+        description: An RFC4122 UID used as a correlation id
+      - in: header
+        name: x-jws-signature
+        description: DO NOT USE
+      responses:
+        200:
+          description: OK
+      tags:
+      - Banking
+      - CreateAccounts
+      - ' Requests'
+  /account-requests/{AccountRequestId}:
+    delete:
+      summary: Delete an account request
+      description: Delete an account request
+      operationId: DeleteAccountRequest
+      parameters:
+      - in: path
+        name: AccountRequestId
+        description: Unique identification as assigned by the ASPSP to uniquely identify
+          the account request resource
+      - in: header
+        name: Authorization
+        description: An Authorisation Token as per https://tools
+      - in: header
+        name: x-fapi-financial-id
+        description: The unique id of the ASPSP to which the request is issued
+      responses:
+        200:
+          description: OK
+      tags:
+      - Banking
+      - Accounts
+      - ' Requests'
+    get:
+      summary: Get an account request
+      description: Get an account request
+      operationId: GetAccountRequest
+      parameters:
+      - in: path
+        name: AccountRequestId
+        description: Unique identification as assigned by the ASPSP to uniquely identify
+          the account request resource
+      - in: header
+        name: Authorization
+        description: An Authorisation Token as per https://tools
+      - in: header
+        name: x-fapi-customer-ip-address
+        description: The PSU's IP address if the PSU is currently logged in with the
+          TPP
+      - in: header
+        name: x-fapi-customer-last-logged-time
+        description: The time when the PSU last logged in with the TPP
+      - in: header
+        name: x-fapi-financial-id
+        description: The unique id of the ASPSP to which the request is issued
+      - in: header
+        name: x-fapi-interaction-id
+        description: An RFC4122 UID used as a correlation id
+      responses:
+        200:
+          description: OK
+      tags:
+      - Banking
+      - Accounts
+      - ' Requests'
+  /accounts:
+    get:
+      summary: Get Accounts
+      description: Get a list of accounts
+      operationId: GetAccounts
+      parameters:
+      - in: header
+        name: Authorization
+        description: An Authorisation Token as per https://tools
+      - in: header
+        name: x-fapi-customer-ip-address
+        description: The PSU's IP address if the PSU is currently logged in with the
+          TPP
+      - in: header
+        name: x-fapi-customer-last-logged-time
+        description: The time when the PSU last logged in with the TPP
+      - in: header
+        name: x-fapi-financial-id
+        description: The unique id of the ASPSP to which the request is issued
+      - in: header
+        name: x-fapi-interaction-id
+        description: An RFC4122 UID used as a correlation id
+      responses:
+        200:
+          description: OK
+      tags:
+      - Banking
+      - Accounts
+  /accounts/{AccountId}:
+    get:
+      summary: Get Account
+      description: Get an account
+      operationId: GetAccount
+      parameters:
+      - in: path
+        name: AccountId
+        description: A unique identifier used to identify the account resource
+      - in: header
+        name: Authorization
+        description: An Authorisation Token as per https://tools
+      - in: header
+        name: x-fapi-customer-ip-address
+        description: The PSU's IP address if the PSU is currently logged in with the
+          TPP
+      - in: header
+        name: x-fapi-customer-last-logged-time
+        description: The time when the PSU last logged in with the TPP
+      - in: header
+        name: x-fapi-financial-id
+        description: The unique id of the ASPSP to which the request is issued
+      - in: header
+        name: x-fapi-interaction-id
+        description: An RFC4122 UID used as a correlation id
+      responses:
+        200:
+          description: OK
+      tags:
+      - Banking
+      - Account
+  /accounts/{AccountId}/balances:
+    get:
+      summary: Get Account Balances
+      description: Get Balances related to an account
+      operationId: GetAccountBalances
+      parameters:
+      - in: path
+        name: AccountId
+        description: A unique identifier used to identify the account resource
+      - in: header
+        name: Authorization
+        description: An Authorisation Token as per https://tools
+      - in: header
+        name: x-fapi-customer-ip-address
+        description: The PSU's IP address if the PSU is currently logged in with the
+          TPP
+      - in: header
+        name: x-fapi-customer-last-logged-time
+        description: The time when the PSU last logged in with the TPP
+      - in: header
+        name: x-fapi-financial-id
+        description: The unique id of the ASPSP to which the request is issued
+      - in: header
+        name: x-fapi-interaction-id
+        description: An RFC4122 UID used as a correlation id
+      responses:
+        200:
+          description: OK
+      tags:
+      - Banking
+      - Account
+      - ' Balances'
+  /accounts/{AccountId}/beneficiaries:
+    get:
+      summary: Get Account Beneficiaries
+      description: Get Beneficiaries related to an account
+      operationId: GetAccountBeneficiaries
+      parameters:
+      - in: path
+        name: AccountId
+        description: A unique identifier used to identify the account resource
+      - in: header
+        name: Authorization
+        description: An Authorisation Token as per https://tools
+      - in: header
+        name: x-fapi-customer-ip-address
+        description: The PSU's IP address if the PSU is currently logged in with the
+          TPP
+      - in: header
+        name: x-fapi-customer-last-logged-time
+        description: The time when the PSU last logged in with the TPP
+      - in: header
+        name: x-fapi-financial-id
+        description: The unique id of the ASPSP to which the request is issued
+      - in: header
+        name: x-fapi-interaction-id
+        description: An RFC4122 UID used as a correlation id
+      responses:
+        200:
+          description: OK
+      tags:
+      - Banking
+      - Account
+      - ' Beneficiaries'
+  /accounts/{AccountId}/direct-debits:
+    get:
+      summary: Get Account Direct Debits
+      description: Get Direct Debits related to an account
+      operationId: GetAccountDirectDebits
+      parameters:
+      - in: path
+        name: AccountId
+        description: A unique identifier used to identify the account resource
+      - in: header
+        name: Authorization
+        description: An Authorisation Token as per https://tools
+      - in: header
+        name: x-fapi-customer-ip-address
+        description: The PSU's IP address if the PSU is currently logged in with the
+          TPP
+      - in: header
+        name: x-fapi-customer-last-logged-time
+        description: The time when the PSU last logged in with the TPP
+      - in: header
+        name: x-fapi-financial-id
+        description: The unique id of the ASPSP to which the request is issued
+      - in: header
+        name: x-fapi-interaction-id
+        description: An RFC4122 UID used as a correlation id
+      responses:
+        200:
+          description: OK
+      tags:
+      - Banking
+      - Account
+      - ' Direct'
+      - ' Debits'
+  /accounts/{AccountId}/product:
+    get:
+      summary: Get Account Product
+      description: Get Product related to an account
+      operationId: GetAccountProduct
+      parameters:
+      - in: path
+        name: AccountId
+        description: A unique identifier used to identify the account resource
+      - in: header
+        name: Authorization
+        description: An Authorisation Token as per https://tools
+      - in: header
+        name: x-fapi-customer-ip-address
+        description: The PSU's IP address if the PSU is currently logged in with the
+          TPP
+      - in: header
+        name: x-fapi-customer-last-logged-time
+        description: The time when the PSU last logged in with the TPP
+      - in: header
+        name: x-fapi-financial-id
+        description: The unique id of the ASPSP to which the request is issued
+      - in: header
+        name: x-fapi-interaction-id
+        description: An RFC4122 UID used as a correlation id
+      responses:
+        200:
+          description: OK
+      tags:
+      - Banking
+      - Account
+      - ' Product'
+  /accounts/{AccountId}/standing-orders:
+    get:
+      summary: Get Account Standing Orders
+      description: Get Standing Orders related to an account
+      operationId: GetAccountStandingOrders
+      parameters:
+      - in: path
+        name: AccountId
+        description: A unique identifier used to identify the account resource
+      - in: header
+        name: Authorization
+        description: An Authorisation Token as per https://tools
+      - in: header
+        name: x-fapi-customer-ip-address
+        description: The PSU's IP address if the PSU is currently logged in with the
+          TPP
+      - in: header
+        name: x-fapi-customer-last-logged-time
+        description: The time when the PSU last logged in with the TPP
+      - in: header
+        name: x-fapi-financial-id
+        description: The unique id of the ASPSP to which the request is issued
+      - in: header
+        name: x-fapi-interaction-id
+        description: An RFC4122 UID used as a correlation id
+      responses:
+        200:
+          description: OK
+      tags:
+      - Banking
+      - Account
+      - ' Standing'
+      - ' Orders'
+  /accounts/{AccountId}/transactions:
+    get:
+      summary: Get Account Transactions
+      description: Get transactions related to an account
+      operationId: GetAccountTransactions
+      parameters:
+      - in: path
+        name: AccountId
+        description: A unique identifier used to identify the account resource
+      - in: header
+        name: Authorization
+        description: An Authorisation Token as per https://tools
+      - in: query
+        name: fromBookingDateTime
+        description: "The UTC ISO 8601 Date Time to filter transactions FROM \nNB
+          Time component is optional - set to 00:00:00 for just Date"
+      - in: query
+        name: toBookingDateTime
+        description: "The UTC ISO 8601 Date Time to filter transactions TO \nNB Time
+          component is optional - set to 00:00:00 for just Date"
+      - in: header
+        name: x-fapi-customer-ip-address
+        description: The PSU's IP address if the PSU is currently logged in with the
+          TPP
+      - in: header
+        name: x-fapi-customer-last-logged-time
+        description: The time when the PSU last logged in with the TPP
+      - in: header
+        name: x-fapi-financial-id
+        description: The unique id of the ASPSP to which the request is issued
+      - in: header
+        name: x-fapi-interaction-id
+        description: An RFC4122 UID used as a correlation id
+      responses:
+        200:
+          description: OK
+      tags:
+      - Banking
+      - Account
+      - ' Transactions'
+  /balances:
+    get:
+      summary: Get Balances
+      description: Get Balances
+      operationId: GetBalances
+      parameters:
+      - in: header
+        name: Authorization
+        description: An Authorisation Token as per https://tools
+      - in: header
+        name: x-fapi-customer-ip-address
+        description: The PSU's IP address if the PSU is currently logged in with the
+          TPP
+      - in: header
+        name: x-fapi-customer-last-logged-time
+        description: The time when the PSU last logged in with the TPP
+      - in: header
+        name: x-fapi-financial-id
+        description: The unique id of the ASPSP to which the request is issued
+      - in: header
+        name: x-fapi-interaction-id
+        description: An RFC4122 UID used as a correlation id
+      responses:
+        200:
+          description: OK
+      tags:
+      - Banking
+      - Balances
+  /beneficiaries:
+    get:
+      summary: Get Beneficiaries
+      description: Get Beneficiaries
+      operationId: GetBeneficiaries
+      parameters:
+      - in: header
+        name: Authorization
+        description: An Authorisation Token as per https://tools
+      - in: header
+        name: x-fapi-customer-ip-address
+        description: The PSU's IP address if the PSU is currently logged in with the
+          TPP
+      - in: header
+        name: x-fapi-customer-last-logged-time
+        description: The time when the PSU last logged in with the TPP
+      - in: header
+        name: x-fapi-financial-id
+        description: The unique id of the ASPSP to which the request is issued
+      - in: header
+        name: x-fapi-interaction-id
+        description: An RFC4122 UID used as a correlation id
+      responses:
+        200:
+          description: OK
+      tags:
+      - Banking
+      - Beneficiaries
+  /direct-debits:
+    get:
+      summary: Get Direct Debits
+      description: Get Direct Debits
+      operationId: GetDirectDebits
+      parameters:
+      - in: header
+        name: Authorization
+        description: An Authorisation Token as per https://tools
+      - in: header
+        name: x-fapi-customer-ip-address
+        description: The PSU's IP address if the PSU is currently logged in with the
+          TPP
+      - in: header
+        name: x-fapi-customer-last-logged-time
+        description: The time when the PSU last logged in with the TPP
+      - in: header
+        name: x-fapi-financial-id
+        description: The unique id of the ASPSP to which the request is issued
+      - in: header
+        name: x-fapi-interaction-id
+        description: An RFC4122 UID used as a correlation id
+      responses:
+        200:
+          description: OK
+      tags:
+      - Banking
+      - Direct
+      - ' Debits'
+  /products:
+    get:
+      summary: Get Products
+      description: Get Products
+      operationId: GetProducts
+      parameters:
+      - in: header
+        name: Authorization
+        description: An Authorisation Token as per https://tools
+      - in: header
+        name: x-fapi-customer-ip-address
+        description: The PSU's IP address if the PSU is currently logged in with the
+          TPP
+      - in: header
+        name: x-fapi-customer-last-logged-time
+        description: The time when the PSU last logged in with the TPP
+      - in: header
+        name: x-fapi-financial-id
+        description: The unique id of the ASPSP to which the request is issued
+      - in: header
+        name: x-fapi-interaction-id
+        description: An RFC4122 UID used as a correlation id
+      responses:
+        200:
+          description: OK
+      tags:
+      - Banking
+      - Products
+  /standing-orders:
+    get:
+      summary: Get Standing Orders
+      description: Get Standing Orders
+      operationId: GetStandingOrders
+      parameters:
+      - in: header
+        name: Authorization
+        description: An Authorisation Token as per https://tools
+      - in: header
+        name: x-fapi-customer-ip-address
+        description: The PSU's IP address if the PSU is currently logged in with the
+          TPP
+      - in: header
+        name: x-fapi-customer-last-logged-time
+        description: The time when the PSU last logged in with the TPP
+      - in: header
+        name: x-fapi-financial-id
+        description: The unique id of the ASPSP to which the request is issued
+      - in: header
+        name: x-fapi-interaction-id
+        description: An RFC4122 UID used as a correlation id
+      responses:
+        200:
+          description: OK
+      tags:
+      - Banking
+      - Standing
+      - ' Orders'
+  /transactions:
+    get:
+      summary: Get Transactions
+      description: Get Transactions
+      operationId: GetTransactions
+      parameters:
+      - in: header
+        name: Authorization
+        description: An Authorisation Token as per https://tools
+      - in: query
+        name: fromBookingDateTime
+        description: "The UTC ISO 8601 Date Time to filter transactions FROM \nNB
+          Time component is optional - set to 00:00:00 for just Date"
+      - in: query
+        name: toBookingDateTime
+        description: "The UTC ISO 8601 Date Time to filter transactions TO \nNB Time
+          component is optional - set to 00:00:00 for just Date"
+      - in: header
+        name: x-fapi-customer-ip-address
+        description: The PSU's IP address if the PSU is currently logged in with the
+          TPP
+      - in: header
+        name: x-fapi-customer-last-logged-time
+        description: The time when the PSU last logged in with the TPP
+      - in: header
+        name: x-fapi-financial-id
+        description: The unique id of the ASPSP to which the request is issued
+      - in: header
+        name: x-fapi-interaction-id
+        description: An RFC4122 UID used as a correlation id
+      responses:
+        200:
+          description: OK
+      tags:
+      - Banking
+      - Transactions
+definitions: []
